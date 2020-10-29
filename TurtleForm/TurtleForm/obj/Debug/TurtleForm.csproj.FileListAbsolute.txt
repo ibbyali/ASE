@@ -1,0 +1,10 @@
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\bin\Debug\TurtleForm.exe.config
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\bin\Debug\TurtleForm.exe
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\bin\Debug\TurtleForm.pdb
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.csprojAssemblyReference.cache
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.Form1.resources
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.Properties.Resources.resources
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.csproj.GenerateResource.cache
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.csproj.CoreCompileInputs.cache
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.exe
+C:\Users\BATTOP\Documents\Git_folder\TurtleForm\TurtleForm\obj\Debug\TurtleForm.pdb
