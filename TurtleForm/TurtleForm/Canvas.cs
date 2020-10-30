@@ -32,5 +32,10 @@ namespace TurtleForm
         {
             g.DrawRectangle(Pen, xPos, yPos, xPos + width, yPos + width);
         }
+
+        public void DrawCircle(int radius)
+        {
+            g.DrawEllipse(Pen, xPos, yPos, xPos + (radius * 2), yPos + (radius * 2));
+        }
     }
 }

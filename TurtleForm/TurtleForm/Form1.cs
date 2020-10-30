@@ -49,6 +49,11 @@ namespace TurtleForm
                     MainCanvas.DrawSquare(25);
                     Console.WriteLine("SQAURE");
                 }
+                else if (Command.Equals("circle") == true)
+                {
+                    MainCanvas.DrawCircle(30);
+                    Console.WriteLine("CIRCLE");
+                }
                 commandLineBox.Text = "";
                 Refresh();
             }

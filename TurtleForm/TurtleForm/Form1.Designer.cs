@@ -30,6 +30,7 @@
         {
             this.drawBox = new System.Windows.Forms.PictureBox();
             this.commandLineBox = new System.Windows.Forms.TextBox();
+            this.multiLineCmd = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.drawBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,20 @@
             this.commandLineBox.TextChanged += new System.EventHandler(this.commandLineBox_TextChanged_1);
             this.commandLineBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.commandLineBox_KeyDown);
             // 
+            // multiLineCmd
+            // 
+            this.multiLineCmd.Location = new System.Drawing.Point(32, 28);
+            this.multiLineCmd.Name = "multiLineCmd";
+            this.multiLineCmd.Size = new System.Drawing.Size(446, 484);
+            this.multiLineCmd.TabIndex = 5;
+            this.multiLineCmd.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 642);
+            this.Controls.Add(this.multiLineCmd);
             this.Controls.Add(this.commandLineBox);
             this.Controls.Add(this.drawBox);
             this.Name = "Form1";
@@ -70,6 +80,7 @@
         #endregion
         private System.Windows.Forms.PictureBox drawBox;
         private System.Windows.Forms.TextBox commandLineBox;
+        private System.Windows.Forms.RichTextBox multiLineCmd;
     }
 }
 
