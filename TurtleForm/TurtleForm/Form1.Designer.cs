@@ -31,14 +31,16 @@
             this.drawBox = new System.Windows.Forms.PictureBox();
             this.commandLineBox = new System.Windows.Forms.TextBox();
             this.multiLineCmd = new System.Windows.Forms.RichTextBox();
+            this.title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.drawBox)).BeginInit();
             this.SuspendLayout();
             // 
             // drawBox
             // 
-            this.drawBox.Location = new System.Drawing.Point(653, 28);
+            this.drawBox.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.drawBox.Location = new System.Drawing.Point(653, 38);
             this.drawBox.Name = "drawBox";
-            this.drawBox.Size = new System.Drawing.Size(466, 566);
+            this.drawBox.Size = new System.Drawing.Size(466, 525);
             this.drawBox.TabIndex = 3;
             this.drawBox.TabStop = false;
             this.drawBox.Click += new System.EventHandler(this.drawBox_Click);
@@ -46,26 +48,38 @@
             // 
             // commandLineBox
             // 
+            this.commandLineBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commandLineBox.Location = new System.Drawing.Point(32, 543);
             this.commandLineBox.Name = "commandLineBox";
-            this.commandLineBox.Size = new System.Drawing.Size(180, 20);
+            this.commandLineBox.Size = new System.Drawing.Size(196, 21);
             this.commandLineBox.TabIndex = 4;
             this.commandLineBox.TextChanged += new System.EventHandler(this.commandLineBox_TextChanged_1);
             this.commandLineBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.commandLineBox_KeyDown);
             // 
             // multiLineCmd
             // 
-            this.multiLineCmd.Location = new System.Drawing.Point(32, 28);
+            this.multiLineCmd.Location = new System.Drawing.Point(32, 38);
             this.multiLineCmd.Name = "multiLineCmd";
-            this.multiLineCmd.Size = new System.Drawing.Size(446, 484);
+            this.multiLineCmd.Size = new System.Drawing.Size(446, 474);
             this.multiLineCmd.TabIndex = 5;
             this.multiLineCmd.Text = "";
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(27, 9);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(151, 26);
+            this.title.TabIndex = 6;
+            this.title.Text = "Tutle Graphics";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 642);
+            this.Controls.Add(this.title);
             this.Controls.Add(this.multiLineCmd);
             this.Controls.Add(this.commandLineBox);
             this.Controls.Add(this.drawBox);
@@ -81,6 +95,7 @@
         private System.Windows.Forms.PictureBox drawBox;
         private System.Windows.Forms.TextBox commandLineBox;
         private System.Windows.Forms.RichTextBox multiLineCmd;
+        private System.Windows.Forms.Label title;
     }
 }
 

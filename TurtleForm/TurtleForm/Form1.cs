@@ -14,10 +14,12 @@ namespace TurtleForm
     {
         Bitmap OutputBitmap = new Bitmap(466, 566);
         Canvas MainCanvas;
+        Cmd Commands;
         public Form1()
         {
             InitializeComponent();
             MainCanvas = new Canvas(Graphics.FromImage(OutputBitmap));
+            Commands = new Cmd(MainCanvas);
         }
 
 
@@ -37,23 +39,9 @@ namespace TurtleForm
             {
                 Console.WriteLine("Return pressed");
 
-                String Command = commandLineBox.Text.Trim().ToLower();
+                String line = commandLineBox.Text;
+                Commands.parseCommands(line);
 
-                if (Command.Equals("line") == true)
-                {
-                    MainCanvas.DrawLine(150, 120);
-                    Console.WriteLine("LINE");
-                }
-                else if (Command.Equals("sqaure") == true)
-                {
-                    MainCanvas.DrawSquare(25);
-                    Console.WriteLine("SQAURE");
-                }
-                else if (Command.Equals("circle") == true)
-                {
-                    MainCanvas.DrawCircle(30);
-                    Console.WriteLine("CIRCLE");
-                }
                 commandLineBox.Text = "";
                 Refresh();
             }
