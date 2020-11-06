@@ -18,7 +18,7 @@ namespace TurtleForm
         {
             this.g = g;
             xPos = yPos = 0;
-            Pen = new Pen(Color.Black, 1);
+            Pen = new Pen(Color.Black, 3);
         }
 
         public void DrawLine(int toX, int toY)
@@ -44,5 +44,11 @@ namespace TurtleForm
         {
             g.DrawEllipse(Pen, xPos, yPos, xPos + (radius * 2), yPos + (radius * 2));
         }
+
+        public void ColorRed(Color red)
+        {
+            Pen pen = new Pen(Color.Red, 3);
+        }
+
     }
 }

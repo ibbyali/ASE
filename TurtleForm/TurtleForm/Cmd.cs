@@ -33,15 +33,17 @@ namespace TurtleForm
             if (split.Length > 1)
             {
                 parameters = split[1].Split(',');
-                for(int i=0; i < parameters.Length; i++)
+                for (int i = 0; i < parameters.Length; i++)
                 {
                     intparameters[i] = int.Parse(parameters[i]);
                 }
             }
 
+            //Commands for shapes
+
             if (Command.Equals("line") == true)
             {
-                MainCanvas.DrawLine(intparameters[0],intparameters[1]);
+                MainCanvas.DrawLine(intparameters[0], intparameters[1]);
                 Console.WriteLine("LINE");
             }
             else if (Command.Equals("square") == true)
@@ -59,14 +61,21 @@ namespace TurtleForm
                 MainCanvas.DrawTriangle(intparameters[0]);
                 Console.WriteLine("TRIANGLE");
             }
+            //commands for pen colour
+            else if(Command.Equals("colour") == true)
+            {
+                //Pen pen = new Pen(Color.Red, 3);
+                Console.WriteLine("change colour");
+            }
             else if (Command.Equals("run") == true)
             {
-
+                
                 Console.WriteLine("MultiLine");
             }
+
         }
 
     }
 
-    
+
 }
