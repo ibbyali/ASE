@@ -50,7 +50,8 @@ namespace TurtleForm
 
         public void PenColor(Color color)
         {
-            Pen.Color = color;
+            //Pen.Color = color;
+            Pen = new Pen(color, 3);
         }
 
         public void MoveTo(int x, int y)

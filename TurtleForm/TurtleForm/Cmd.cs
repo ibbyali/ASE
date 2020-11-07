@@ -13,7 +13,7 @@ namespace TurtleForm
     class Cmd
     {
         String[] split;
-        String Command;
+        String Command;                 //all the global variables
         String color;
         String[] parameters;
         int[] intparameters;
@@ -27,20 +27,21 @@ namespace TurtleForm
 
         public void parseCommands(String line)
         {
-            line = line.ToLower().Trim();
+            line = line.ToLower().Trim();    //this takes the input from user trims, and split if they is a space
             split = line.Split(' ');
 
-            Command = split[0];
-            if (split.Length > 1)
+            Command = split[0];    //puts the first half of the split and stores it as a command
+            { 
+            if (split.Length > 1)    //if they is more than one piece of data in the split array run the If statement
             {
                 parameters = split[1].Split(',');
                 for (int i = 0; i < parameters.Length; i++)
                 {
-                   intparameters[i] = int.Parse(parameters[i]);
+                    intparameters[i] = int.Parse(parameters[i]);
                 }
             }
 
-            //Commands for shapes
+            //Commands
 
             if (Command.Equals("line") == true)
             {
@@ -62,31 +63,31 @@ namespace TurtleForm
                 MainCanvas.DrawTriangle(intparameters[0]);
                 Console.WriteLine("TRIANGLE");
             }
-            else if(Command.Equals("pen") == true)
+            else if (Command.Equals("pen") == true)
             {
-                Console.WriteLine("Pen colour changed");
                 if (parameters[0].Equals("red"))
                 {
                     MainCanvas.PenColor(Color.Red);
                 }
-                if(parameters[0].Equals("black"))
+                if (parameters[0].Equals("black"))
                 {
                     MainCanvas.PenColor(Color.Black);
                 }
+                Console.WriteLine("Pen colour changed");
             }
-            else if(Command.Equals("moveto") == true)
+            else if (Command.Equals("moveto") == true)
             {
+                MainCanvas.MoveTo(intparameters[0], intparameters[1]);
                 Console.WriteLine("You have moved");
-                if(int.TryParse(parameters[0], out int x) && int.TryParse(parameters[1], out int y))
-                {
-                    MainCanvas.MoveTo(x, y);
-                }
+
             }
             else if (Command.Equals("run") == true)
             {
-                
+
                 Console.WriteLine("MultiLine");
             }
+
+        }
 
         }
 
