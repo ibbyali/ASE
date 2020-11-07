@@ -12,6 +12,8 @@ namespace TurtleForm
         Graphics g;
         Pen Pen;
         int xPos, yPos;
+        int penheight = 5;
+        int penwidth = 5;
 
 
         public Canvas(Graphics g)
@@ -19,6 +21,7 @@ namespace TurtleForm
             this.g = g;
             xPos = yPos = 0;
             Pen = new Pen(Color.Black, 3);
+            g.DrawRectangle(Pen, xPos, yPos, penheight, penwidth);
         }
 
         public void DrawLine(int toX, int toY)
@@ -45,9 +48,17 @@ namespace TurtleForm
             g.DrawEllipse(Pen, xPos, yPos, xPos + (radius * 2), yPos + (radius * 2));
         }
 
-        public void ColorRed(Color red)
+        public void PenColor(Color color)
         {
-            Pen pen = new Pen(Color.Red, 3);
+            Pen.Color = color;
+        }
+
+        public void MoveTo(int x, int y)
+        {
+            xPos = x;
+            yPos = y;
+
+            g.DrawRectangle(Pen, xPos, yPos, penheight, penwidth);
         }
 
     }

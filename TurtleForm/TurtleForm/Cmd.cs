@@ -14,6 +14,7 @@ namespace TurtleForm
     {
         String[] split;
         String Command;
+        String color;
         String[] parameters;
         int[] intparameters;
         Canvas MainCanvas;
@@ -35,7 +36,7 @@ namespace TurtleForm
                 parameters = split[1].Split(',');
                 for (int i = 0; i < parameters.Length; i++)
                 {
-                    intparameters[i] = int.Parse(parameters[i]);
+                   intparameters[i] = int.Parse(parameters[i]);
                 }
             }
 
@@ -61,11 +62,25 @@ namespace TurtleForm
                 MainCanvas.DrawTriangle(intparameters[0]);
                 Console.WriteLine("TRIANGLE");
             }
-            //commands for pen colour
-            else if(Command.Equals("colour") == true)
+            else if(Command.Equals("pen") == true)
             {
-                //Pen pen = new Pen(Color.Red, 3);
-                Console.WriteLine("change colour");
+                Console.WriteLine("Pen colour changed");
+                if (parameters[0].Equals("red"))
+                {
+                    MainCanvas.PenColor(Color.Red);
+                }
+                if(parameters[0].Equals("black"))
+                {
+                    MainCanvas.PenColor(Color.Black);
+                }
+            }
+            else if(Command.Equals("moveto") == true)
+            {
+                Console.WriteLine("You have moved");
+                if(int.TryParse(parameters[0], out int x) && int.TryParse(parameters[1], out int y))
+                {
+                    MainCanvas.MoveTo(x, y);
+                }
             }
             else if (Command.Equals("run") == true)
             {

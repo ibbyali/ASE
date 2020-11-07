@@ -37,8 +37,8 @@
             // 
             // drawBox
             // 
-            this.drawBox.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.drawBox.Location = new System.Drawing.Point(653, 38);
+            this.drawBox.BackColor = System.Drawing.SystemColors.Window;
+            this.drawBox.Location = new System.Drawing.Point(652, 23);
             this.drawBox.Name = "drawBox";
             this.drawBox.Size = new System.Drawing.Size(466, 525);
             this.drawBox.TabIndex = 3;
@@ -58,6 +58,7 @@
             // 
             // multiLineCmd
             // 
+            this.multiLineCmd.BackColor = System.Drawing.SystemColors.Window;
             this.multiLineCmd.Location = new System.Drawing.Point(32, 38);
             this.multiLineCmd.Name = "multiLineCmd";
             this.multiLineCmd.Size = new System.Drawing.Size(446, 474);
@@ -78,6 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1153, 642);
             this.Controls.Add(this.title);
             this.Controls.Add(this.multiLineCmd);
