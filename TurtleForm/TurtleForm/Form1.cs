@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace TurtleForm
 {
-    public partial class Form1 : Form
+    public partial class execute : Form
     {
         Bitmap OutputBitmap = new Bitmap(466, 566);
         Canvas MainCanvas;
         Cmd Commands;
-        public Form1()
+        public execute()
         {
             InitializeComponent();
             MainCanvas = new Canvas(Graphics.FromImage(OutputBitmap));
@@ -51,6 +51,11 @@ namespace TurtleForm
         {
             Graphics g = e.Graphics;
             g.DrawImageUnscaled(OutputBitmap, 0, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

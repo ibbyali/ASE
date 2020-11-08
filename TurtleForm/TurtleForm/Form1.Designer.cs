@@ -1,6 +1,6 @@
 ﻿namespace TurtleForm
 {
-    partial class Form1
+    partial class execute
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,8 @@
             this.commandLineBox = new System.Windows.Forms.TextBox();
             this.multiLineCmd = new System.Windows.Forms.RichTextBox();
             this.title = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.drawBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +42,7 @@
             this.drawBox.BackColor = System.Drawing.SystemColors.Window;
             this.drawBox.Location = new System.Drawing.Point(652, 23);
             this.drawBox.Name = "drawBox";
-            this.drawBox.Size = new System.Drawing.Size(466, 525);
+            this.drawBox.Size = new System.Drawing.Size(466, 489);
             this.drawBox.TabIndex = 3;
             this.drawBox.TabStop = false;
             this.drawBox.Click += new System.EventHandler(this.drawBox_Click);
@@ -71,21 +73,44 @@
             this.title.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.Location = new System.Drawing.Point(27, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(151, 26);
+            this.title.Size = new System.Drawing.Size(160, 26);
             this.title.TabIndex = 6;
-            this.title.Text = "Tutle Graphics";
+            this.title.Text = "Turtle Graphics";
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button1.Location = new System.Drawing.Point(391, 537);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 27);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Run";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.Location = new System.Drawing.Point(1034, 542);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 27);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Clear";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // execute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1153, 642);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.title);
             this.Controls.Add(this.multiLineCmd);
             this.Controls.Add(this.commandLineBox);
             this.Controls.Add(this.drawBox);
-            this.Name = "Form1";
+            this.Name = "execute";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.drawBox)).EndInit();
             this.ResumeLayout(false);
@@ -98,6 +123,8 @@
         private System.Windows.Forms.TextBox commandLineBox;
         private System.Windows.Forms.RichTextBox multiLineCmd;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -12,8 +12,8 @@ namespace TurtleForm
         Graphics g;
         Pen Pen;
         int xPos, yPos;
-        int penheight = 5;
-        int penwidth = 5;
+        int penheight = 7;
+        int penlength = 7;
 
 
         public Canvas(Graphics g)
@@ -21,7 +21,7 @@ namespace TurtleForm
             this.g = g;
             xPos = yPos = 0;
             Pen = new Pen(Color.Black, 3);
-            g.DrawRectangle(Pen, xPos, yPos, penheight, penwidth);
+            g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
         }
 
         public void DrawLine(int toX, int toY)
@@ -31,9 +31,14 @@ namespace TurtleForm
             yPos = toY;
         }
 
-        public void DrawSquare(int width)
+        public void DrawSquare(int length)
         {
-            g.DrawRectangle(Pen, xPos, yPos, xPos + width, yPos + width);
+            g.DrawRectangle(Pen, xPos, yPos, xPos + length, yPos + length);
+        }
+
+        public void DrawRectangle(int length, int height)
+        {
+            g.DrawRectangle(Pen, xPos, yPos, xPos + length, yPos + height);
         }
 
         public void DrawTriangle(int length)
@@ -59,8 +64,14 @@ namespace TurtleForm
             xPos = x;
             yPos = y;
 
-            g.DrawRectangle(Pen, xPos, yPos, penheight, penwidth);
+            g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
         }
 
+        public void ClearWindow()
+        {
+            g.Clear(Color.White);
+            g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
+            
+        }
     }
 }

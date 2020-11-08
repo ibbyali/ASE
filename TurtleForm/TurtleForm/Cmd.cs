@@ -14,7 +14,6 @@ namespace TurtleForm
     {
         String[] split;
         String Command;                 //all the global variables
-        String color;
         String[] parameters;
         int[] intparameters;
         Canvas MainCanvas;
@@ -30,14 +29,18 @@ namespace TurtleForm
             line = line.ToLower().Trim();    //this takes the input from user trims, and split if they is a space
             split = line.Split(' ');
 
-            Command = split[0];    //puts the first half of the split and stores it as a command
-            { 
+            Command = split[0];    //puts the first half of the split and stores it as a command 
             if (split.Length > 1)    //if they is more than one piece of data in the split array run the If statement
             {
-                parameters = split[1].Split(',');
-                for (int i = 0; i < parameters.Length; i++)
+
+                parameters = split[1].Split(',');   //split the coordinates put them into integers array
+
+                if (split[0] != "pen")
                 {
-                    intparameters[i] = int.Parse(parameters[i]);
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        intparameters[i] = int.Parse(parameters[i]);
+                    }
                 }
             }
 
@@ -46,6 +49,7 @@ namespace TurtleForm
             if (Command.Equals("line") == true)
             {
                 MainCanvas.DrawLine(intparameters[0], intparameters[1]);
+                MainCanvas.MoveTo(intparameters[0], intparameters[1]);
                 Console.WriteLine("LINE");
             }
             else if (Command.Equals("square") == true)
@@ -53,9 +57,16 @@ namespace TurtleForm
                 MainCanvas.DrawSquare(intparameters[0]);
                 Console.WriteLine("SQUARE");
             }
+            else if (Command.Equals("rectangle") == true)
+            {
+                MainCanvas.DrawRectangle(intparameters[0], intparameters[1]);
+                MainCanvas.MoveTo(intparameters[0], intparameters[1]);
+                Console.WriteLine("Rectangle");
+            }
             else if (Command.Equals("circle") == true)
             {
                 MainCanvas.DrawCircle(intparameters[0]);
+                MainCanvas.MoveTo(intparameters[0], intparameters[1]);
                 Console.WriteLine("CIRCLE");
             }
             else if (Command.Equals("triangle") == true)
@@ -79,17 +90,26 @@ namespace TurtleForm
             {
                 MainCanvas.MoveTo(intparameters[0], intparameters[1]);
                 Console.WriteLine("You have moved");
-
             }
             else if (Command.Equals("run") == true)
             {
 
                 Console.WriteLine("MultiLine");
             }
+            else if (Command.Equals("reset") == true)
+            {
+                MainCanvas.ClearWindow();
+                MainCanvas.MoveTo(0, 0);
+
+            }
+            else if (Command.Equals("clear") == true)
+            {
+                MainCanvas.ClearWindow();
+            }
+
 
         }
 
-        }
 
     }
 
