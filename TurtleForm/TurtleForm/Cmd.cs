@@ -64,7 +64,7 @@ namespace TurtleForm
                     MainCanvas.DrawSquare(intparameters[0]);
                     Console.WriteLine("SQUARE");
                 }
-                else if (Command.Equals("rectangle") == true)
+                else if (Command.Equals("rect") == true)
                 {
                     MainCanvas.DrawRectangle(intparameters[0], intparameters[1]);
                     MainCanvas.MoveTo(intparameters[0], intparameters[1]);
