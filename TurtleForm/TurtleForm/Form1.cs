@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TurtleForm
 {
@@ -40,10 +41,27 @@ namespace TurtleForm
                 Console.WriteLine("Return pressed");
 
                 String line = commandLineBox.Text;
-                Commands.parseCommands(line);
+         
 
                 commandLineBox.Text = "";
                 Refresh();
+                if (line.Equals("run") == true)
+                {
+
+                    using (StringReader reader = new StringReader(multiLineCmd.Text))
+                    {
+                        String richTextLine;
+                        while ((richTextLine = reader.ReadLine()) != null)
+                        {
+                            Commands.parseCommands(richTextLine);
+                        }
+                    }
+                    Console.WriteLine("MultiLine");
+                }
+                else
+                {
+                    Commands.parseCommands(line);
+                }
             }
         }
 
@@ -51,11 +69,57 @@ namespace TurtleForm
         {
             Graphics g = e.Graphics;
             g.DrawImageUnscaled(OutputBitmap, 0, 0);
+            Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "Open File";
+            open.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader read = new StreamReader(File.OpenRead(open.FileName));
+                multiLineCmd.Text = read.ReadToEnd();
+                read.Dispose();
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = "Save File";
+            save.Filter = "Text Files (*.txt)|*.txt| AllowDrop Files(*.*)|*.*";
+
+            if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamWriter write = new StreamWriter(File.Create(save.FileName));
+
+                write.Write(multiLineCmd.Text);
+                write.Dispose();
+            }
+        }
+
+        private void multiLineCmd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+           
         }
     }
 }

@@ -55,7 +55,6 @@ namespace TurtleForm
 
         public void PenColor(Color color)
         {
-            //Pen.Color = color;
             Pen = new Pen(color, 3);
         }
 
@@ -65,6 +64,15 @@ namespace TurtleForm
             yPos = y;
 
             g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
+        }
+
+        public void DrawTo(int x, int y)
+        {
+            
+            g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
+            g.DrawLine(Pen, xPos, yPos, x, y);
+            xPos = x;
+            yPos = y;
         }
 
         public void ClearWindow()
