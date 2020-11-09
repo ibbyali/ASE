@@ -41,17 +41,17 @@ namespace TurtleForm
                 Console.WriteLine("Return pressed");
 
                 String line = commandLineBox.Text;
-         
+
 
                 commandLineBox.Text = "";
                 Refresh();
                 if (line.Equals("run") == true)
                 {
 
-                    using (StringReader reader = new StringReader(multiLineCmd.Text))
+                    using (StringReader reader = new StringReader(multiLineCmd.Text))  //this what allows program to reach each line as a string in richtextbox
                     {
                         String richTextLine;
-                        while ((richTextLine = reader.ReadLine()) != null)
+                        while ((richTextLine = reader.ReadLine()) != null)  //while loop runs untill its read each line of the richtextbox
                         {
                             Commands.parseCommands(richTextLine);
                         }
@@ -81,7 +81,7 @@ namespace TurtleForm
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Open File";
-            open.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
+            open.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";   //when dialog box is open .txt file is preset ready to save
 
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -102,7 +102,7 @@ namespace TurtleForm
             {
                 StreamWriter write = new StreamWriter(File.Create(save.FileName));
 
-                write.Write(multiLineCmd.Text);
+                write.Write(multiLineCmd.Text);  //read from richtextbox and save it as file
                 write.Dispose();
             }
         }
@@ -114,12 +114,12 @@ namespace TurtleForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-           
+
         }
     }
 }

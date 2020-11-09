@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 namespace TurtleForm
+
+    //class where we create all the functions that will be classed from cmd class
 {
     class Canvas
     {
@@ -64,11 +66,12 @@ namespace TurtleForm
             yPos = y;
 
             g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
+
         }
 
         public void DrawTo(int x, int y)
         {
-            
+
             g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
             g.DrawLine(Pen, xPos, yPos, x, y);
             xPos = x;
@@ -79,7 +82,7 @@ namespace TurtleForm
         {
             g.Clear(Color.White);
             g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
-            
+
         }
     }
 }
