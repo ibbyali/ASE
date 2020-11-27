@@ -1,0 +1,37 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+
+}
+
+body {
+    padding: 0;
+    margin: 0%;
+    background: linear-gradient(to right, #080808, #ec0a0a);
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
+}
+
+.grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(225, 225, 225, .75);
+}
+
+.grid >button:hover {
+   background-color: rgba(225, 225, 225, .90); 
+}
+
+.button-span {
+    grid-column: span 2;
+}
