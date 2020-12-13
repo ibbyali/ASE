@@ -18,11 +18,15 @@ namespace TurtleForm
         int[] intparameters;
         Canvas MainCanvas;
 
+        
+
         public Cmd(Canvas MainCanvas)
         {
             this.MainCanvas = MainCanvas;
             intparameters = new int[2];
+            variables localV = new variables();
         }
+
 
         public void parseCommands(String line)
         {
@@ -58,6 +62,7 @@ namespace TurtleForm
                         MainCanvas.MoveTo(intparameters[0], intparameters[1]);
                         Console.WriteLine("LINE");
                     }
+
                     else if (Command.Equals("square") == true)
                     {
                         MainCanvas.DrawSquare(intparameters[0]);
@@ -75,6 +80,7 @@ namespace TurtleForm
                         MainCanvas.MoveTo(intparameters[0], intparameters[1]);
                         Console.WriteLine("CIRCLE");
                     }
+    
                     else if (Command.Equals("triangle") == true)
                     {
                         MainCanvas.DrawTriangle(intparameters[0]);
