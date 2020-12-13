@@ -43,85 +43,85 @@ namespace TurtleForm
                         {
                             intparameters[i] = int.Parse(parameters[i]);
                         }
-                        catch
+                        catch (Exception e)
                         {
-                            System.Windows.Forms.MessageBox.Show("Invalid parameter!\nE.g: line 100,100", "Error!");
-                            return;
+                            Console.WriteLine("Invalid parameter!\nE.g: line 100,100", "Error!");
                         }
                     }
-                }
 
-                //Commands
 
-                if (Command.Equals("line") == true)
-                {
-                    MainCanvas.DrawLine(intparameters[0], intparameters[1]);
-                    MainCanvas.MoveTo(intparameters[0], intparameters[1]);
-                    Console.WriteLine("LINE");
-                }
-                else if (Command.Equals("square") == true)
-                {
-                    MainCanvas.DrawSquare(intparameters[0]);
-                    Console.WriteLine("SQUARE");
-                }
-                else if (Command.Equals("rect") == true)
-                {
-                    MainCanvas.DrawRectangle(intparameters[0], intparameters[1]);
-                    MainCanvas.MoveTo(intparameters[0], intparameters[1]);
-                    Console.WriteLine("Rectangle");
-                }
-                else if (Command.Equals("circle") == true)
-                {
-                    MainCanvas.DrawCircle(intparameters[0]);
-                    MainCanvas.MoveTo(intparameters[0], intparameters[1]);
-                    Console.WriteLine("CIRCLE");
-                }
-                else if (Command.Equals("triangle") == true)
-                {
-                    MainCanvas.DrawTriangle(intparameters[0]);
-                    Console.WriteLine("TRIANGLE");
-                }
-                else if (Command.Equals("pen") == true)
-                {
-                    if (parameters[0].Equals("red"))
+                    //Commands
+
+                    if (Command.Equals("line") == true)
                     {
-                        MainCanvas.PenColor(Color.Red);
+                        MainCanvas.DrawLine(intparameters[0], intparameters[1]);
+                        MainCanvas.MoveTo(intparameters[0], intparameters[1]);
+                        Console.WriteLine("LINE");
                     }
-                    if (parameters[0].Equals("black"))
+                    else if (Command.Equals("square") == true)
                     {
-                        MainCanvas.PenColor(Color.Black);
+                        MainCanvas.DrawSquare(intparameters[0]);
+                        Console.WriteLine("SQUARE");
                     }
-                    if (parameters[0].Equals("blue"))
+                    else if (Command.Equals("rect") == true)
                     {
-                        MainCanvas.PenColor(Color.Blue);
+                        MainCanvas.DrawRectangle(intparameters[0], intparameters[1]);
+                        MainCanvas.MoveTo(intparameters[0], intparameters[1]);
+                        Console.WriteLine("Rectangle");
                     }
-                    if (parameters[0].Equals("yellow"))
+                    else if (Command.Equals("circle") == true)
                     {
-                        MainCanvas.PenColor(Color.Yellow);
+                        MainCanvas.DrawCircle(intparameters[0]);
+                        MainCanvas.MoveTo(intparameters[0], intparameters[1]);
+                        Console.WriteLine("CIRCLE");
                     }
-                    Console.WriteLine("Pen colour changed");
-                }
-                else if (Command.Equals("moveto") == true)
-                {
-                    MainCanvas.MoveTo(intparameters[0], intparameters[1]);
-                    Console.WriteLine("You have moved");
-                }
-                else if (Command.Equals("drawto") == true)
-                {
-                    MainCanvas.DrawTo(intparameters[0], intparameters[1]);
-                    Console.WriteLine("You have drawn");
-                }
-                else if (Command.Equals("reset") == true)
-                {
-                    MainCanvas.ClearWindow();
-                    MainCanvas.MoveTo(0, 0);
+                    else if (Command.Equals("triangle") == true)
+                    {
+                        MainCanvas.DrawTriangle(intparameters[0]);
+                        Console.WriteLine("TRIANGLE");
+                    }
+                    else if (Command.Equals("pen") == true)
+                    {
+                        if (parameters[0].Equals("red"))
+                        {
+                            MainCanvas.PenColor(Color.Red);
+                        }
+                        if (parameters[0].Equals("black"))
+                        {
+                            MainCanvas.PenColor(Color.Black);
+                        }
+                        if (parameters[0].Equals("blue"))
+                        {
+                            MainCanvas.PenColor(Color.Blue);
+                        }
+                        if (parameters[0].Equals("yellow"))
+                        {
+                            MainCanvas.PenColor(Color.Yellow);
+                        }
+                        Console.WriteLine("Pen colour changed");
+                    }
+                    else if (Command.Equals("moveto") == true)
+                    {
+                        MainCanvas.MoveTo(intparameters[0], intparameters[1]);
+                        Console.WriteLine("You have moved");
+                    }
+                    else if (Command.Equals("drawto") == true)
+                    {
+                        MainCanvas.DrawTo(intparameters[0], intparameters[1]);
+                        Console.WriteLine("You have drawn");
+                    }
+                    else if (Command.Equals("reset") == true)
+                    {
+                        MainCanvas.ClearWindow();
+                        MainCanvas.MoveTo(0, 0);
+
+                    }
+                    else if (Command.Equals("clear") == true)
+                    {
+                        MainCanvas.ClearWindow();
+                    }
 
                 }
-                else if (Command.Equals("clear") == true)
-                {
-                    MainCanvas.ClearWindow();
-                }
-
             }
         }
 
