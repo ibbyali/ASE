@@ -46,12 +46,12 @@ namespace TurtleForm
                         catch
                         {
                             System.Windows.Forms.MessageBox.Show("Invalid parameter!\nE.g: line 100,100", "Error!");
-                            return; 
+                            return;
                         }
                     }
                 }
-            }
-                    //Commands
+
+                //Commands
 
                 if (Command.Equals("line") == true)
                 {
@@ -122,7 +122,7 @@ namespace TurtleForm
                     MainCanvas.ClearWindow();
                 }
 
-
+            }
         }
 
 
