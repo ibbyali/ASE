@@ -24,7 +24,7 @@ namespace TurtleForm
         {
             this.MainCanvas = MainCanvas;
             intparameters = new int[2];
-            variables localV = new variables();
+            
         }
 
 
@@ -39,7 +39,7 @@ namespace TurtleForm
 
                 parameters = split[1].Split(',');   //split the coordinates put them into integers array
 
-                if (split[0] != "pen")
+                if (split[0] != "pen"||split[0] != "fill")
                 {
                     for (int i = 0; i < parameters.Length; i++)
                     {
@@ -68,6 +68,16 @@ namespace TurtleForm
                         MainCanvas.DrawSquare(intparameters[0]);
                         Console.WriteLine("SQUARE");
                     }
+                    //else if (Command.Equals("square"))
+                   // {
+                     //   if (split[1].Equals ("X"))
+                     //   {
+                     //       int size = localV.X;
+                     //       MainCanvas.DrawCircle(size);
+                           
+
+                     //   }
+                   // }
                     else if (Command.Equals("rect") == true)
                     {
                         MainCanvas.DrawRectangle(intparameters[0], intparameters[1]);
@@ -115,6 +125,19 @@ namespace TurtleForm
                     {
                         MainCanvas.DrawTo(intparameters[0], intparameters[1]);
                         Console.WriteLine("You have drawn");
+                    }
+                    else if (Command.Equals("fillon") == true)
+                    {
+                        if (parameters[0].Equals("on"))
+                        {
+                            MainCanvas.Fillstate(true);
+                            Console.Write("Fill is Off");
+                        }
+                        else if (parameters[0].Equals("off"))
+                        {
+                            MainCanvas.Fillstate(false);
+                            Console.Write("Fill is Off");
+                        }
                     }
                     else if (Command.Equals("reset") == true)
                     {
