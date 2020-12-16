@@ -39,7 +39,7 @@ namespace TurtleForm
 
                 parameters = split[1].Split(',');   //split the coordinates put them into integers array
 
-                if (split[0] != "pen"||split[0] != "fill")
+                if (split[0] != "pen" || split[0] != "fill")
                 {
                     for (int i = 0; i < parameters.Length; i++)
                     {
@@ -47,7 +47,7 @@ namespace TurtleForm
                         {
                             intparameters[i] = int.Parse(parameters[i]);
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             Console.WriteLine("Invalid parameter!\nE.g: line 100,100", "Error!");
                         }
@@ -126,18 +126,19 @@ namespace TurtleForm
                         MainCanvas.DrawTo(intparameters[0], intparameters[1]);
                         Console.WriteLine("You have drawn");
                     }
-                    else if (Command.Equals("fillon") == true)
+                    else if (Command.Equals("fill") == true)
                     {
                         if (parameters[0].Equals("on"))
                         {
                             MainCanvas.Fillstate(true);
-                            Console.Write("Fill is Off");
+                            //Console.Write("Fill is On");
                         }
-                        else if (parameters[0].Equals("off"))
+                        if (parameters[0].Equals("off"))
                         {
                             MainCanvas.Fillstate(false);
-                            Console.Write("Fill is Off");
+                            //Console.Write("Fill is Off");
                         }
+                        Console.WriteLine("fill change");
                     }
                     else if (Command.Equals("reset") == true)
                     {
