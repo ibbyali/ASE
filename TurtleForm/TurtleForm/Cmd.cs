@@ -68,16 +68,7 @@ namespace TurtleForm
                         MainCanvas.DrawSquare(intparameters[0]);
                         Console.WriteLine("SQUARE");
                     }
-                    //else if (Command.Equals("square"))
-                   // {
-                     //   if (split[1].Equals ("X"))
-                     //   {
-                     //       int size = localV.X;
-                     //       MainCanvas.DrawCircle(size);
-                           
-
-                     //   }
-                   // }
+                   
                     else if (Command.Equals("rect") == true)
                     {
                         MainCanvas.DrawRectangle(intparameters[0], intparameters[1]);
@@ -150,7 +141,24 @@ namespace TurtleForm
                     {
                         MainCanvas.ClearWindow();
                     }
+                    else if (Command.Equals("if") == true)
+                    {
+                        //if (parameters[0])
+                        //{
 
+                        //}
+                    }
+                    else if (Command.Equals("loop") == true)
+                    {
+                        for (int i = 0; i < intparameters[0]; i++)
+                        {
+
+                        }
+                    }
+                    else if (Command.Equals("end") == true)
+                    {
+
+                    }
                 }
             }
         }

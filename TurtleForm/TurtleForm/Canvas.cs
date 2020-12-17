@@ -39,6 +39,15 @@ namespace TurtleForm
         public void DrawSquare(int length)
         {
             g.DrawRectangle(Pen, xPos, yPos, xPos + length, yPos + length);
+
+            if(fill == false)
+            {
+                g.DrawRectangle(Pen, xPos, yPos, xPos + length, yPos + length);
+            }
+            else if(fill == true)
+            {
+                g.DrawRectangle(Brush, xPos, yPos, xPos + length, yPos + length);
+            }
         }
 
         public void DrawRectangle(int length, int height)
