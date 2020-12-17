@@ -46,7 +46,7 @@ namespace TurtleForm
             }
             else if(fill == true)
             {
-                g.DrawRectangle(Brush, xPos, yPos, xPos + length, yPos + length);
+                g.FillRectangle(Brush, xPos, yPos, xPos + length, yPos + length);
             }
         }
 
@@ -122,9 +122,5 @@ namespace TurtleForm
             fill = e;
         }
 
-        public void FillOff()
-        {
-
-        }
     }
 }
