@@ -161,9 +161,9 @@ namespace TurtleForm
 
                         }
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
-                        Console.WriteLine("This exception is ");
+                        System.Console.WriteLine("This exception is " + e.Message);
                         MessageBox.Show("Invalid Command", "Invalid Command", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 

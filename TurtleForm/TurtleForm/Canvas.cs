@@ -70,7 +70,10 @@ namespace TurtleForm
             this.DrawLine(xPos + length, yPos);
             this.DrawLine(xPos - length, yPos - length);
         }
-
+        /// <summary>
+        /// Takes intparameter and set it as radis of circle and function create the circle
+        /// </summary>
+        /// <param name="radius"></param>
         public void DrawCircle(int radius)
         {
             g.DrawEllipse(Pen, xPos, yPos, xPos + (radius * 2), yPos + (radius * 2));
@@ -86,12 +89,19 @@ namespace TurtleForm
                 g.FillEllipse(Brush, xPos, yPos, xPos + (radius * 2), yPos + (radius * 2));
             }
         }
-
+        /// <summary>
+        /// sets new pen when it is called
+        /// </summary>
+        /// <param name="color"></param>
         public void PenColor(Color color)
         {
             Pen = new Pen(color, 3);
         }
-
+        /// <summary>
+        /// Sets new pen location
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public void MoveTo(int x, int y)
         {
             xPos = x;
