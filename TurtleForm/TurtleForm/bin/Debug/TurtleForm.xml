@@ -4,6 +4,37 @@
         <name>TurtleForm</name>
     </assembly>
     <members>
+        <member name="T:TurtleForm.Canvas">
+            <summary>
+            Declaration of variables
+            </summary>
+        </member>
+        <member name="M:TurtleForm.Canvas.DrawLine(System.Int32,System.Int32)">
+            <summary>
+            Takes both parameters of intparameter array and sets it to 'toY' and 'toY' which draws a line
+            </summary>
+            <param name="toX"></param>
+            <param name="toY"></param>
+        </member>
+        <member name="M:TurtleForm.Canvas.DrawSquare(System.Int32)">
+            <summary>
+            Takes intparameter and set it as length and the function creates the square
+            </summary>
+            <param name="length"></param>
+        </member>
+        <member name="M:TurtleForm.Canvas.DrawRectangle(System.Int32,System.Int32)">
+            <summary>
+            Takes intparameter and set both parameters to length and height and that creates the function for rectangle
+            </summary>
+            <param name="length"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:TurtleForm.Canvas.DrawTriangle(System.Int32)">
+            <summary>
+            Takes intparameter and set it as length and the function creates the triangle
+            </summary>
+            <param name="length"></param>
+        </member>
         <member name="M:TurtleForm.Canvas.DrawCircle(System.Int32)">
             <summary>
             Takes intparameter and set it as radis of circle and function create the circle
@@ -22,6 +53,55 @@
             </summary>
             <param name="x"></param>
             <param name="y"></param>
+        </member>
+        <member name="M:TurtleForm.Canvas.ClearWindow">
+            <summary>
+            this functions clears the picture box
+            </summary>
+        </member>
+        <member name="M:TurtleForm.Canvas.Fillstate(System.Boolean)">
+            <summary>
+            makes the fill variable a boolean
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TurtleForm.Cmd.parseCommands(System.String)">
+            <summary>
+            Takes input from user and trims and split line is they is a space
+            first split stores in command and get checked if it a valid command and executes the correct function
+            second split gets stored in parameter array which is the expected result of the command if needed
+            within paramater if they is a "," each number gets stored in a space of intparameter array
+            </summary>
+            <param name="line"></param>
+        </member>
+        <member name="M:TurtleForm.execute.#ctor">
+            <summary>
+            Main class which the program executes from
+            </summary>
+        </member>
+        <member name="M:TurtleForm.execute.commandLineBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Takes input from textbox which is sent to cmd class after enter button is hit
+            also checks line by line rich text box and send input to cmd class
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TurtleForm.execute.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens open 'file box' dialog box
+            default filter txt files
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TurtleForm.execute.button4_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens 'save file' dialog box
+            saves file as a txt file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="F:TurtleForm.execute.components">
             <summary>

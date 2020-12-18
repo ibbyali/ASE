@@ -19,7 +19,7 @@ namespace TurtleForm
         Canvas MainCanvas;
 
 
-
+        
         public Cmd(Canvas MainCanvas)
         {
             this.MainCanvas = MainCanvas;
@@ -27,7 +27,13 @@ namespace TurtleForm
 
         }
 
-
+        /// <summary>
+        /// Takes input from user and trims and split line is they is a space
+        /// first split stores in command and get checked if it a valid command and executes the correct function
+        /// second split gets stored in parameter array which is the expected result of the command if needed
+        /// within paramater if they is a "," each number gets stored in a space of intparameter array
+        /// </summary>
+        /// <param name="line"></param>
         public void parseCommands(String line)
         {
             line = line.ToLower().Trim();    //this takes the input from user trims, and split if they is a space
@@ -38,7 +44,7 @@ namespace TurtleForm
             {
 
                 parameters = split[1].Split(',');   //split the coordinates put them into integers array
-
+                
                 if (split[0] != "pen" || split[0] != "fill")
                 {
                     for (int i = 0; i < parameters.Length; i++)
@@ -47,9 +53,10 @@ namespace TurtleForm
                         {
                             intparameters[i] = int.Parse(parameters[i]);
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
-                            Console.WriteLine("Invalid parameter!\nE.g: line 100,100", "Error!");
+                            System.Console.WriteLine("Invalid parameter!\nE.g: line 100,100", "Error!" + e.Message);
+                            //MessageBox.Show("Invalid Command", "Invalid Command", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 

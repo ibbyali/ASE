@@ -16,6 +16,9 @@ namespace TurtleForm
         Bitmap OutputBitmap = new Bitmap(466, 566);
         Canvas MainCanvas;
         Cmd Commands;
+        /// <summary>
+        /// Main class which the program executes from
+        /// </summary>
         public execute()
         {
             InitializeComponent();
@@ -33,7 +36,12 @@ namespace TurtleForm
         {
 
         }
-
+        /// <summary>
+        /// Takes input from textbox which is sent to cmd class after enter button is hit
+        /// also checks line by line rich text box and send input to cmd class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void commandLineBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -76,7 +84,12 @@ namespace TurtleForm
         {
 
         }
-
+        /// <summary>
+        /// Opens open 'file box' dialog box
+        /// default filter txt files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -91,7 +104,12 @@ namespace TurtleForm
 
             }
         }
-
+        /// <summary>
+        /// Opens 'save file' dialog box
+        /// saves file as a txt file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();

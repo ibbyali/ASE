@@ -8,7 +8,9 @@ using System.Drawing;
 namespace TurtleForm
 
     //class where we create all the functions that will be classed from cmd class
-{
+{   /// <summary>
+    /// Declaration of variables
+    /// </summary>
     class Canvas
     {
         Graphics g;
@@ -28,14 +30,21 @@ namespace TurtleForm
             Pen = new Pen(Color.Black, 3);
             g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
         }
-
+        /// <summary>
+        /// Takes both parameters of intparameter array and sets it to 'toY' and 'toY' which draws a line
+        /// </summary>
+        /// <param name="toX"></param>
+        /// <param name="toY"></param>
         public void DrawLine(int toX, int toY)
         {
             g.DrawLine(Pen, xPos, yPos, toX, toY);
             xPos = toX;
             yPos = toY;
         }
-
+        /// <summary>
+        /// Takes intparameter and set it as length and the function creates the square
+        /// </summary>
+        /// <param name="length"></param>
         public void DrawSquare(int length)
         {
             g.DrawRectangle(Pen, xPos, yPos, xPos + length, yPos + length);
@@ -49,7 +58,11 @@ namespace TurtleForm
                 g.FillRectangle(Brush, xPos, yPos, xPos + length, yPos + length);
             }
         }
-
+        /// <summary>
+        /// Takes intparameter and set both parameters to length and height and that creates the function for rectangle
+        /// </summary>
+        /// <param name="length"></param>
+        /// <param name="height"></param>
         public void DrawRectangle(int length, int height)
         {
             g.DrawRectangle(Pen, xPos, yPos, xPos + length, yPos + height);
@@ -63,7 +76,10 @@ namespace TurtleForm
                 g.FillRectangle(Brush, xPos, yPos, xPos + length, yPos + height);
             }
         }
-
+        /// <summary>
+        /// Takes intparameter and set it as length and the function creates the triangle
+        /// </summary>
+        /// <param name="length"></param>
         public void DrawTriangle(int length)
         {
             this.DrawLine(xPos, yPos + length);
@@ -119,14 +135,19 @@ namespace TurtleForm
             xPos = x;
             yPos = y;
         }
-
+        /// <summary>
+        /// this functions clears the picture box
+        /// </summary>
         public void ClearWindow()
         {
             g.Clear(Color.White);
             g.DrawRectangle(Pen, xPos, yPos, penheight, penlength);
 
         }
-
+        /// <summary>
+        /// makes the fill variable a boolean
+        /// </summary>
+        /// <param name="e"></param>
         public void Fillstate(Boolean e)
         {
             fill = e;
